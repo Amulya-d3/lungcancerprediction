@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lung Cancer Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h2>Lung Cancer Prediction System</h2>
+
+    <form action="/predict" method="post">
+        <label>Gender (1=Male, 0=Female)</label>
+        <input name="gender" required>
+
+        <label>Age</label>
+        <input name="age" required>
+
+        <label>Smoking (1/0)</label>
+        <input name="smoking" required>
+
+        <label>Yellow Fingers (1/0)</label>
+        <input name="yellow_fingers" required>
+
+        <label>Anxiety (1/0)</label>
+        <input name="anxiety" required>
+
+        <label>Peer Pressure (1/0)</label>
+        <input name="peer_pressure" required>
+
+        <label>Chronic Disease (1/0)</label>
+        <input name="chronic_disease" required>
+
+        <label>Fatigue (1/0)</label>
+        <input name="fatigue" required>
+
+        <label>Allergy (1/0)</label>
+        <input name="allergy" required>
+
+        <label>Wheezing (1/0)</label>
+        <input name="wheezing" required>
+
+        <label>Alcohol (1/0)</label>
+        <input name="alcohol" required>
+
+        <label>Coughing (1/0)</label>
+        <input name="coughing" required>
+
+        <label>Shortness of Breath (1/0)</label>
+        <input name="shortness_breath" required>
+
+        <label>Swallowing Difficulty (1/0)</label>
+        <input name="swallowing_difficulty" required>
+
+        <label>Chest Pain (1/0)</label>
+        <input name="chest_pain" required>
+
+        <button type="submit" class="full-width">Predict</button>
+    </form>
+
+    {% if prediction_text %}
+        <div class="result">{{ prediction_text }}</div>
+    {% endif %}
+</div>
+
+</body>
+</html>
